@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --v-padding: 12px;
+  --h-padding: 18px;
+
+  --color-secondary: rgba(9, 36, 68, 0.75);
+  --color-primary: rgba(53, 3, 39, 0.8);
+
+  --border-radius-small: 15px;
+  --border-radius-medium: 25px;
+
+  --font-family: 'Montserrat';
+  --font-semi-bold: 600;
+  --font-bold: 700;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  width: calc(100vw - 60px);
+  height: calc(100vh - 60px);
+  background: url("assets/app-bg.svg") center center no-repeat;
+  background-size: cover;
+  padding: 30px;
+  display: flex;
+}
+
