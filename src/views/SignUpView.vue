@@ -43,6 +43,7 @@ export default {
                        @input="console.log(email)"
         />
         <ESCBasicInput class="input_block"
+                       :type="'password'"
                        :has-icon="true"
                        :icon="'open_eye_icon.svg'"
                        :placeholder="'Пароль'"
@@ -50,7 +51,7 @@ export default {
                        @input="console.log(password)"
         />
         <ESCBasicInput class="input_block"
-                       :type="'text'"
+                       :type="'password'"
                        :has-icon="true"
                        :icon="'open_eye_icon.svg'"
                        :placeholder="'Подтверждения пароля'"
