@@ -16,6 +16,8 @@
   --background-color-primary: rgba(196, 172, 172, 0.35);
   --background-input-color-primary: rgba(177, 153, 153, 0.75);
   --border-color-primary: rgba(177, 153, 153, 0.85);
+  --popup-background-color: rgba(196, 172, 172, 0.5);
+  --popup-border-color: rgba(196, 172, 172, 1);
 
   --border-radius-small: 15px;
   --border-radius-medium: 25px;
