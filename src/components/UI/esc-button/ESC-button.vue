@@ -1,41 +1,141 @@
 <script setup lang="ts">
 
-import type {ButtonStyle, ButtonType} from "./types";
+import type {ButtonStyle} from "./types";
+import EscIcon from "../icon/esc-icon.vue";
+import {useSlots} from "vue";
 
-  defineProps<{
-    type: ButtonType,w
-    style: ButtonStyle,
-    icon: string,
-  }>();
-
+defineProps<{
+  leadIcon?: string,
+  trailIcon?: string,
+  btnStyle: ButtonStyle,
+}>()
 </script>
 
 <template>
-  <div class="btn" :class="type">
-    <div v-if="type === 'lead'"><img src="" alt=""></div>
-    <div v-if="type !== 'standalone'"><slot></slot></div>
-    <div v-else><img src="" alt="" ></div>
-    <div v-if="type === 'trail'"><img src="" alt=""></div>
+  <div
+      ref="btn"
+      :class=" useSlots().default ?
+      `btn ${btnStyle}` :
+      `btn ${btnStyle} standalone`"
+  >
+    <div v-if="leadIcon" class="icon-wrap">
+      <EscIcon :name="leadIcon"/>
+    </div>
+    <div class="text">
+      <slot></slot>
+    </div>
+    <div v-if="trailIcon" class="icon-wrap">
+      <EscIcon :name="trailIcon"/>
+    </div>
   </div>
 </template>
 
 <style scoped>
-  .btn {
+  .btn, .icon-wrap {
     display: flex;
     justify-content: center;
-    padding: var(--v-padding) var(--h-padding);
-    background-color: var(--color-secondary);
+    align-items: center;
+  }
+
+  .btn {
+    padding: var(--v-padding);
+    height: var(--btn-height);
+    width: var(--btn-width);
     border-radius: var(--border-radius-small);
     font-family: var(--font-family), serif;
-    font-weight: var(--font-semi-bold);
+    font-weight: var(--font-bold);
     font-size: 16px;
-    outline: none;
-    border: none;
+    gap: var(--icon-text-gap-small);
+    border: solid 4px transparent;
+    transition: all 0.5s;
+    text-overflow: clip;
+  }
+
+  .btn .fill-current *,
+  .btn .fill-current {
+    transition: all 0.2s;
+  }
+
+  .btn:hover {
+    cursor: pointer;
+  }
+
+  .icon-wrap {
+    min-width: var(--btn-height);
+    height: var(--btn-height);
+  }
+
+  .text {
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .standalone {
-    width: 2.3vw;
-    aspect-ratio: 1/1;
+    width: var(--btn-height);
     padding: var(--v-padding);
+    gap: 0;
   }
+
+  .default {
+    background-color: var(--color-secondary);
+  }
+
+  .default:hover {
+    background-color: var(--color-primary);
+  }
+
+  .inverted {
+    border-color: var(--color-secondary);
+    color: var(--color-secondary);
+    background-color: transparent;
+    position: relative;
+    z-index: 0;
+  }
+
+  .inverted::after {
+    content: '';
+    width: 100%;
+    height: 0;
+    background-color: var(--color-secondary);
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    transition: height 0.3s;
+    border-radius: 10px;
+  }
+
+  .inverted:hover {
+    color: white;
+  }
+
+  .inverted:hover::after {
+    height: 100%
+  }
+
+  .inverted .fill-current *,
+  .inverted .fill-current {
+    transition: all 0.2s;
+    fill: var(--color-secondary);
+  }
+
+  .inverted:hover .fill-current *,
+  .inverted:hover .fill-current {
+    fill: white;
+  }
+
+  .transparent {
+    position: relative;
+    background-color: transparent;
+    fill: var(--color-secondary);
+    color: var(--color-secondary);
+  }
+
+  .transparent:hover {
+    background-color: rgba(9, 36, 68, 0.2);
+  }
+
+
+
 </style>
