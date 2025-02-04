@@ -2,6 +2,7 @@
 :root {
   color-scheme: light dark;
 
+  font-family: 'Montserrat', sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -15,6 +16,11 @@
 
   --color-secondary: rgba(9, 36, 68, 0.8);
   --color-primary: rgba(53, 3, 39, 0.8);
+  --background-color-primary: rgba(196, 172, 172, 0.35);
+  --background-input-color-primary: rgba(177, 153, 153, 0.75);
+  --border-color-primary: rgba(177, 153, 153, 0.85);
+  --popup-background-color: rgba(196, 172, 172, 0.5);
+  --popup-border-color: rgba(196, 172, 172, 1);
 
   --border-radius-small: 15px;
   --border-radius-medium: 25px;
@@ -33,11 +39,18 @@ html, body {
 }
 
 #app {
-  width: calc(100vw - 60px);
-  height: calc(100vh - 60px);
-  background: url("assets/icons/app-bg.svg") center center no-repeat;
+  width: 100vw;
+  min-height: 100vh;
+  background: url("assets/app-bg.svg") center center fixed;
   background-size: cover;
   padding: 30px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+* {
+  color: var(--color-primary);
+  box-sizing: border-box;
 }
 
