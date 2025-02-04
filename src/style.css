@@ -8,10 +8,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --v-padding: 12px;
+  --v-padding: 2px;
   --h-padding: 18px;
 
-  --color-secondary: rgba(9, 36, 68, 0.75);
+  --btn-height: 40px;
+  --btn-width: 231px;
+
+  --color-secondary: rgba(9, 36, 68, 0.8);
   --color-primary: rgba(53, 3, 39, 0.8);
   --background-color-primary: rgba(196, 172, 172, 0.35);
   --background-input-color-primary: rgba(177, 153, 153, 0.75);
@@ -25,6 +28,9 @@
   --font-family: 'Montserrat';
   --font-semi-bold: 600;
   --font-bold: 700;
+
+  --icon-text-gap-medium: 8px;
+  --icon-text-gap-small: 2px;
 }
 
 html, body {

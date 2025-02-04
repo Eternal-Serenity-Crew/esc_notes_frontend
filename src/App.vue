@@ -12,6 +12,29 @@
 import AsideBar from "./components/AsideBar.vue";
 import SignUpView from "./views/SignUpView.vue";
 
+const notes = [
+  {
+    id: 1,
+    title: "Линал Теормин fasdfsdaf",
+    href: "https://vk.com"
+  },
+  {
+    id: 2,
+    title: "Матан Теормин",
+    href: "https://vk.com"
+  },
+  {
+    id: 3,
+    title: "Линал Коллок",
+    href: "https://vk.com"
+  },
+  {
+    id: 4,
+    title: "Кринж",
+    href: "https://vk.com"
+  }
+]
+
 console.log(document.documentElement.clientWidth)
 </script>
 
