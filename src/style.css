@@ -35,7 +35,7 @@ html, body {
 #app {
   width: calc(100vw - 60px);
   height: calc(100vh - 60px);
-  background: url("assets/app-bg.svg") center center no-repeat;
+  background: url("assets/icons/app-bg.svg") center center no-repeat;
   background-size: cover;
   padding: 30px;
   display: flex;
