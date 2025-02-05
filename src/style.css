@@ -11,8 +11,8 @@
   --v-padding: 2px;
   --h-padding: 18px;
 
-  --btn-height: 40px;
-  --btn-width: 231px;
+  --btn-height: 44px;
+  --btn-width: 267px;
 
   --color-secondary: rgba(9, 36, 68, 0.8);
   --color-primary: rgba(53, 3, 39, 0.8);
@@ -31,6 +31,8 @@
 
   --icon-text-gap-medium: 8px;
   --icon-text-gap-small: 2px;
+
+  --spacing: 22px;
 }
 
 html, body {
@@ -41,7 +43,7 @@ html, body {
 #app {
   width: 100vw;
   min-height: 100vh;
-  background: url("assets/app-bg.svg") center center fixed;
+  background: url("assets/icons/app-bg.svg") center center fixed;
   background-size: cover;
   padding: 30px;
   display: flex;

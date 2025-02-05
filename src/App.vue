@@ -1,6 +1,6 @@
 <template>
   <div class="app_primary_container">
-    <AsideBar :is-open="true"/>
+    <AsideBar :opened-notes="notes"/>
     <div class="app_container">
       <SignUpView/>
     </div>
@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 
-import AsideBar from "./components/AsideBar.vue";
+import AsideBar from "./components/asidebar/AsideBar.vue";
 import SignUpView from "./views/SignUpView.vue";
 
 const notes = [
@@ -42,7 +42,7 @@ console.log(document.documentElement.clientWidth)
 .app_primary_container {
   min-height: calc(100vh - 60px);
   display: grid;
-  grid-template-columns: 1fr 9fr;
+  grid-template-columns: auto 9fr;
 }
 
 .app_container {

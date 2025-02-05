@@ -16,6 +16,7 @@ const isOpen = ref(false)
     <div :class="isOpen ? 'nav-group' : 'nav-group closed'">
       <ESCButton
           :btn-style="isOpen ? 'transparent' : 'transparent standalone'"
+          class="profile"
       >
         ESC admin
       </ESCButton>
@@ -81,12 +82,13 @@ const isOpen = ref(false)
     background-color: rgba(196, 172, 172, 0.35);
     border-radius: 25px;
     overflow: hidden;
-    width: calc(var(--btn-height) + 2 * var(--v-padding) + 8px);
+    width: calc(var(--btn-height) + 36px);
     transition: width 0.5s;
+    box-sizing: border-box;
   }
 
   .aside-bar.opened {
-    width: calc(var(--btn-width) + 24px);
+    width: calc(var(--btn-width) + 36px);
   }
 
   .nav-group {
@@ -95,11 +97,18 @@ const isOpen = ref(false)
     justify-content: space-between;
     user-select: none;
     overflow: hidden;
+    margin-bottom: var(--spacing);
   }
 
   .nav-group div:first-child {
     justify-content: flex-start;
+
   }
+
+  .nav-group .profile div {
+    color: var(--color-primary);
+  }
+
 
   .nav-group.closed div:first-child {
     margin-left: -100%;
@@ -134,12 +143,6 @@ const isOpen = ref(false)
     border-radius: var(--border-radius-medium);
   }
 
-
-  .menu .menu-item svg *,
-  .menu .menu-item svg {
-    stroke: var(--color-primary);
-  }
-
   .menu div:hover::after {
     height: 70%;
   }
@@ -172,7 +175,7 @@ const isOpen = ref(false)
     min-height: 3px;
     border-radius: var(--border-radius-small);
     background-color: var(--color-secondary);
-    margin: 1.5vw 0;
+    margin: var(--spacing) 0;
   }
 
   .new-note {
@@ -185,5 +188,6 @@ const isOpen = ref(false)
     user-select: none;
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 </style>

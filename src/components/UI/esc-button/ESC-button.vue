@@ -61,8 +61,8 @@ defineProps<{
   }
 
   .icon-wrap {
-    min-width: var(--btn-height);
-    height: var(--btn-height);
+    min-width: 32px;
+    height: 32px;
   }
 
   .text {
@@ -70,16 +70,23 @@ defineProps<{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    transition: color 0.3s;
+    color: var(--color-secondary);
   }
 
   .standalone {
     width: var(--btn-height);
     padding: var(--v-padding);
+    justify-content: center;
     gap: 0;
   }
 
   .default {
     background-color: var(--color-secondary);
+  }
+
+  .default .text {
+    color: white;
   }
 
   .default:hover {
@@ -106,7 +113,7 @@ defineProps<{
     border-radius: 10px;
   }
 
-  .inverted:hover {
+  .inverted:hover .text {
     color: white;
   }
 
@@ -135,7 +142,6 @@ defineProps<{
   .transparent:hover {
     background-color: rgba(9, 36, 68, 0.2);
   }
-
 
 
 </style>
