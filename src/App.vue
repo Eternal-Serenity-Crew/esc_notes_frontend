@@ -50,6 +50,5 @@ console.log(document.documentElement.clientWidth)
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
 }
 </style>
